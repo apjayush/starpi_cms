@@ -3,7 +3,7 @@ let articleContent = document.getElementById('articleCards');
 
 
 
-fetch('http://localhost:1337/api/articles/?populate=*')
+fetch('http://156.67.208.25:1337/api/articles/?populate=*')
 .then((response)=>response.json())
 .then((article)=>{
     
@@ -15,7 +15,7 @@ let arrElm = article.data;
 
 let html = '';
  arrElm.forEach((element) => {
-     fetch(`http://localhost:1337${element.attributes.img.data.attributes.url}`)
+     fetch(`http://156.67.208.25:1337${element.attributes.img.data.attributes.url}`)
      .then(response=>response.blob())
      .then(bolb =>{
          // console.log(bolb);
@@ -34,7 +34,7 @@ let html = '';
             <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">${element.attributes.title}</h2>
             <p class="leading-relaxed">${element.attributes.summary}
              </p>
-            <a class="read-more-button text-indigo-500 inline-flex items-center mt-4 cursor-pointer" href="http://localhost:5500/src/articles.html?id=${element.id}">Read More
+            <a class="read-more-button text-indigo-500 inline-flex items-center mt-4 cursor-pointer" href="http://156.67.208.25:80/src/articles.html?id=${element.id}">Read More
                 <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                     fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 12h14"></path>

@@ -3,7 +3,7 @@
       connection: {
         client: 'postgres',
         connection: {
-          host: env('DATABASE_HOST', 'localhost'),
+          host: env('DATABASE_HOST', '156.67.208.25'),
           port: env.int('DATABASE_PORT', 5432),
           database: env('DATABASE_NAME', 'codewitharyan'),
           user: env('DATABASE_USERNAME', 'postgres'),

@@ -3,12 +3,12 @@ console.log('hi');
 let urlParams = new URLSearchParams(window.location.search);
 let elmId = urlParams.get('id');
 
-fetch(`http://localhost:1337/api/articles/${elmId}?populate=*`)
+fetch(`http://156.67.208.25:1337/api/articles/${elmId}?populate=*`)
 .then(response=>response.json())
 .then((data)=>{
     let obtained = data.data;
     console.log(obtained.attributes.title);
-    fetch(`http://localhost:1337${obtained.attributes.img.data.attributes.url}`)
+    fetch(`http://156.67.208.25:1337${obtained.attributes.img.data.attributes.url}`)
     .then(response=>response.blob())
     .then((blob)=>{
         const objectURL = URL.createObjectURL(blob);
